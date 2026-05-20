@@ -98,7 +98,7 @@ export class TymeTrigger implements INodeType {
                 const event = this.getNodeParameter('event') as string;
                 try {
                     await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
-                        method: 'POST',
+                        method: 'DELETE',
                         url: `${BASE_URL}/webhooks/unsubscribe`,
                         body: {hook_url: webhookUrl, trigger_type: event},
                     });
