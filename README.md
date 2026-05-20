@@ -7,6 +7,7 @@ Tyme lets individuals and teams track time against projects and tasks, manage ab
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/sustainable-use-license/) workflow automation platform.
 
 [Installation](#installation)
+[Trigger Events](#trigger-events)
 [Operations](#operations)
 [Credentials](#credentials)
 [Compatibility](#compatibility)
@@ -15,6 +16,19 @@ Tyme lets individuals and teams track time against projects and tasks, manage ab
 ## Installation
 
 Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+
+## Trigger Events
+
+The **Tyme Trigger** node starts a workflow automatically when something happens in Tyme. Activate the workflow and it registers a webhook with the Tyme API; deactivating it unregisters automatically.
+
+Supported events:
+
+- **Category Created** — a new project category is created
+- **Project Created** — a new project is created
+- **Sub-Task Created** — a new sub-task is created
+- **Task Created** — a new task is created
+- **Time Entry Created** — a new time entry is started
+- **Time Entry Stopped** — a running time entry is stopped
 
 ## Operations
 

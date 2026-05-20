@@ -14,4 +14,11 @@
   - **Team Member**: Get All
   - **Time Entry**: Create, Update, Delete
   - **Times**: Get
+- **Tyme Trigger node** with support for the following events:
+  - Category Created
+  - Project Created
+  - Sub-Task Created
+  - Task Created
+  - Time Entry Created
+  - Time Entry Stopped
 - **Tyme OAuth2** credentials
