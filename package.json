@@ -34,7 +34,8 @@
             "dist/credentials/TymeOAuth2Api.credentials.js"
         ],
         "nodes": [
-            "dist/nodes/Tyme/Tyme.node.js"
+            "dist/nodes/Tyme/Tyme.node.js",
+            "dist/nodes/Tyme/TymeTrigger.node.js"
         ]
     },
     "devDependencies": {

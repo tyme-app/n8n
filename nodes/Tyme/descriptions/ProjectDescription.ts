@@ -92,7 +92,6 @@ export const projectFields: INodeProperties[] = [
                 name: 'default_hourly_rate',
                 type: 'number',
                 default: 0,
-                description: 'Default hourly rate',
             },
             {
                 displayName: 'Due Date',
