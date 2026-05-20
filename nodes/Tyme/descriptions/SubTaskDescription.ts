@@ -97,6 +97,13 @@ export const subTaskFields: INodeProperties[] = [
                 description: 'Hourly rate in cents',
             },
             {
+                displayName: 'ID',
+                name: 'id',
+                type: 'string',
+                default: '',
+                description: 'Custom ID for the sub-task. Auto-generated if omitted. Cannot be changed after creation.',
+            },
+            {
                 displayName: 'Planned Duration (Seconds)',
                 name: 'planned_duration',
                 type: 'number',
@@ -107,13 +114,6 @@ export const subTaskFields: INodeProperties[] = [
                 name: 'start_date',
                 type: 'dateTime',
                 default: '',
-            },
-            {
-                displayName: 'ID',
-                name: 'id',
-                type: 'string',
-                default: '',
-                description: 'Custom ID for the sub-task. Auto-generated if omitted. Cannot be changed after creation.',
             },
         ],
     },

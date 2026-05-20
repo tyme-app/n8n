@@ -3,6 +3,7 @@ import type { ICredentialType, INodeProperties } from 'n8n-workflow';
 export class TymeOAuth2Api implements ICredentialType {
 	name = 'tymeOAuth2Api';
 	displayName = 'Tyme OAuth2 API';
+	icon = 'file:../nodes/Tyme/tyme.svg' as const;
 	extends = ['oAuth2Api'];
 	documentationUrl = 'https://www.tyme-app.com/en/api-doc/';
 
@@ -36,6 +37,7 @@ export class TymeOAuth2Api implements ICredentialType {
 			name: 'clientSecret',
 			type: 'hidden',
 			default: '',
+			typeOptions: { password: true },
 		},
 {
 			displayName: 'Scope',

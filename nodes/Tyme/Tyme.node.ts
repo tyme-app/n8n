@@ -394,7 +394,6 @@ export class Tyme implements INodeType {
                     continue;
                 }
 
-                if ((error as NodeApiError).name === 'NodeApiError') throw error;
                 throw new NodeApiError(this.getNode(), error as JsonObject, {itemIndex: i});
             }
         }

@@ -101,6 +101,13 @@ export const projectFields: INodeProperties[] = [
                 default: '',
             },
             {
+                displayName: 'ID',
+                name: 'id',
+                type: 'string',
+                default: '',
+                description: 'Custom ID for the project. Auto-generated if omitted. Cannot be changed after creation.',
+            },
+            {
                 displayName: 'Planned Budget',
                 name: 'planned_budget',
                 type: 'number',
@@ -134,13 +141,6 @@ export const projectFields: INodeProperties[] = [
                 name: 'start_date',
                 type: 'dateTime',
                 default: '',
-            },
-            {
-                displayName: 'ID',
-                name: 'id',
-                type: 'string',
-                default: '',
-                description: 'Custom ID for the project. Auto-generated if omitted. Cannot be changed after creation.',
             },
         ],
     },

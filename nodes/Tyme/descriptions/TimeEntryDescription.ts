@@ -90,7 +90,7 @@ export const timeEntryFields: INodeProperties[] = [
                 name: 'time_end',
                 type: 'dateTime',
                 default: '',
-                description: 'Leave empty for a running entry.',
+                description: 'Leave empty for a running entry',
             },
             {
                 displayName: 'ID',
