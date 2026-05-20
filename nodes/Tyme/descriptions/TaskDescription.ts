@@ -100,7 +100,7 @@ export const taskFields: INodeProperties[] = [
                 name: 'hourly_rate',
                 type: 'number',
                 default: 0,
-                description: 'Hourly rate in cents',
+                description: 'Hourly rate',
             },
             {
                 displayName: 'ID',
