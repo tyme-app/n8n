@@ -9,11 +9,11 @@
     ],
     "author": {
         "name": "Lars Gerckens",
-        "email": "lars@tyme-app.com"
+        "email": "hello@numberfive.co"
     },
     "repository": {
         "type": "git",
-        "url": "https://bitbucket.org/lgerckens/tyme-n8n.git"
+        "url": "https://github.com/tyme-app/n8n.git"
     },
    "scripts": {
 		"build": "n8n-node build",
