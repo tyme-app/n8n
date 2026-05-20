@@ -72,6 +72,6 @@ To connect:
 
 ## Resources
 
-- [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
-- [Tyme website](https://tyme-app.com/)
-- [Tyme API documentation](https://api.tyme-app.com/)
+- [n8n Community Nodes Documentation](https://docs.n8n.io/integrations/community-nodes/installation/)
+- [Tyme Website](https://tyme-app.com/)
+- [Tyme API documentation](https://www.tyme-app.com/en/api-doc/)
