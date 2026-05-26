@@ -88,4 +88,6 @@ To connect:
 
 - [n8n Community Nodes Documentation](https://docs.n8n.io/integrations/community-nodes/installation/)
 - [Tyme Website](https://tyme-app.com/)
-- [Tyme API documentation](https://www.tyme-app.com/en/api-doc/)
+- [Tyme API Documentation](https://www.tyme-app.com/en/api-doc/)
+- [Tyme n8n Community Node](https://creators.n8n.io/nodes/n8n-nodes-tyme/integration)
+- [Tyme n8n npm Package](https://www.npmjs.com/package/n8n-nodes-tyme)
