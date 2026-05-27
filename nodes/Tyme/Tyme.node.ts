@@ -20,7 +20,7 @@ import {teamMemberFields, teamMemberOperations} from './descriptions/TeamMemberD
 import {timeEntryFields, timeEntryOperations} from './descriptions/TimeEntryDescription';
 import {timesFields, timesOperations} from './descriptions/TimesDescription';
 import {absenceFields, absenceOperations} from './descriptions/AbsenceDescription';
-import {TYME_API_TYME_API_BASE_URL} from './constants';
+import {TYME_API_BASE_URL} from './constants';
 
 function toTymeDate(value: unknown): string {
     if (!value) return '';
