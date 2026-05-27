@@ -20,8 +20,7 @@ import {teamMemberFields, teamMemberOperations} from './descriptions/TeamMemberD
 import {timeEntryFields, timeEntryOperations} from './descriptions/TimeEntryDescription';
 import {timesFields, timesOperations} from './descriptions/TimesDescription';
 import {absenceFields, absenceOperations} from './descriptions/AbsenceDescription';
-
-const BASE_URL = 'https://api.tyme-app.com';
+import {TYME_API_TYME_API_BASE_URL} from './constants';
 
 function toTymeDate(value: unknown): string {
     if (!value) return '';
@@ -128,7 +127,7 @@ export class Tyme implements INodeType {
                         responseData = await this.helpers.httpRequestWithAuthentication.call(
                             this,
                             'tymeOAuth2Api',
-                            {method: 'POST', url: `${BASE_URL}/data/update_entity`, body},
+                            {method: 'POST', url: `${TYME_API_BASE_URL}/data/update_entity`, body},
                         );
                         returnData.push({json: responseData as IDataObject, pairedItem: {item: i}});
                         continue;
@@ -147,7 +146,7 @@ export class Tyme implements INodeType {
                         responseData = await this.helpers.httpRequestWithAuthentication.call(
                             this,
                             'tymeOAuth2Api',
-                            {method: 'POST', url: `${BASE_URL}/data/update_entity`, body},
+                            {method: 'POST', url: `${TYME_API_BASE_URL}/data/update_entity`, body},
                         );
                         returnData.push({json: responseData as IDataObject, pairedItem: {item: i}});
                         continue;
@@ -157,7 +156,7 @@ export class Tyme implements INodeType {
                         const id = this.getNodeParameter('id', i) as string;
                         await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
                             method: 'DELETE',
-                            url: `${BASE_URL}/data/entity`,
+                            url: `${TYME_API_BASE_URL}/data/entity`,
                             qs: {time_ids: [id]},
                         });
                         returnData.push({json: {success: true}, pairedItem: {item: i}});
@@ -175,7 +174,7 @@ export class Tyme implements INodeType {
                         'tymeOAuth2Api',
                         {
                             method: 'GET',
-                            url: `${BASE_URL}/data/summary`,
+                            url: `${TYME_API_BASE_URL}/data/summary`,
                             qs: {from, to},
                         },
                     );
@@ -192,7 +191,7 @@ export class Tyme implements INodeType {
                         const response = await this.helpers.httpRequestWithAuthentication.call(
                             this,
                             'tymeOAuth2Api',
-                            {method: 'GET', url: `${BASE_URL}/data/members`},
+                            {method: 'GET', url: `${TYME_API_BASE_URL}/data/members`},
                         );
                         const members = Array.isArray(response) ? response : [response];
                         for (const member of members) {
@@ -203,7 +202,7 @@ export class Tyme implements INodeType {
                         responseData = await this.helpers.httpRequestWithAuthentication.call(
                             this,
                             'tymeOAuth2Api',
-                            {method: 'GET', url: `${BASE_URL}/data/members/${userId}`},
+                            {method: 'GET', url: `${TYME_API_BASE_URL}/data/members/${userId}`},
                         );
                         returnData.push({json: responseData as IDataObject, pairedItem: {item: i}});
                     }
@@ -219,7 +218,7 @@ export class Tyme implements INodeType {
                     responseData = await this.helpers.httpRequestWithAuthentication.call(
                         this,
                         'tymeOAuth2Api',
-                        {method: 'GET', url: `${BASE_URL}/data/times`, qs},
+                        {method: 'GET', url: `${TYME_API_BASE_URL}/data/times`, qs},
                     );
                     const entries = Array.isArray(responseData)
                         ? responseData
@@ -245,7 +244,7 @@ export class Tyme implements INodeType {
                         responseData = await this.helpers.httpRequestWithAuthentication.call(
                             this,
                             'tymeOAuth2Api',
-                            {method: 'POST', url: `${BASE_URL}/data/update_entity`, body},
+                            {method: 'POST', url: `${TYME_API_BASE_URL}/data/update_entity`, body},
                         );
                         returnData.push({json: responseData as IDataObject, pairedItem: {item: i}});
                         continue;
@@ -265,7 +264,7 @@ export class Tyme implements INodeType {
                         responseData = await this.helpers.httpRequestWithAuthentication.call(
                             this,
                             'tymeOAuth2Api',
-                            {method: 'POST', url: `${BASE_URL}/data/update_entity`, body},
+                            {method: 'POST', url: `${TYME_API_BASE_URL}/data/update_entity`, body},
                         );
                         returnData.push({json: responseData as IDataObject, pairedItem: {item: i}});
                         continue;
@@ -278,7 +277,7 @@ export class Tyme implements INodeType {
                             'tymeOAuth2Api',
                             {
                                 method: 'DELETE',
-                                url: `${BASE_URL}/data/entity`,
+                                url: `${TYME_API_BASE_URL}/data/entity`,
                                 qs: {time_ids: [id]},
                             },
                         );
@@ -306,7 +305,7 @@ export class Tyme implements INodeType {
                     const response = await this.helpers.httpRequestWithAuthentication.call(
                         this,
                         'tymeOAuth2Api',
-                        {method: 'GET', url: `${BASE_URL}/data/search_entity`, qs},
+                        {method: 'GET', url: `${TYME_API_BASE_URL}/data/search_entity`, qs},
                     );
                     const results = Array.isArray(response) ? response : [response];
                     for (const result of results) {
@@ -338,7 +337,7 @@ export class Tyme implements INodeType {
                     responseData = await this.helpers.httpRequestWithAuthentication.call(
                         this,
                         'tymeOAuth2Api',
-                        {method: 'POST', url: `${BASE_URL}/data/update_entity`, body},
+                        {method: 'POST', url: `${TYME_API_BASE_URL}/data/update_entity`, body},
                     );
                     returnData.push({json: responseData as IDataObject, pairedItem: {item: i}});
                     continue;
@@ -363,7 +362,7 @@ export class Tyme implements INodeType {
                     responseData = await this.helpers.httpRequestWithAuthentication.call(
                         this,
                         'tymeOAuth2Api',
-                        {method: 'POST', url: `${BASE_URL}/data/update_entity`, body},
+                        {method: 'POST', url: `${TYME_API_BASE_URL}/data/update_entity`, body},
                     );
                     returnData.push({json: responseData as IDataObject, pairedItem: {item: i}});
                     continue;
@@ -373,7 +372,7 @@ export class Tyme implements INodeType {
                     const id = this.getNodeParameter('id', i) as string;
                     await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
                         method: 'DELETE',
-                        url: `${BASE_URL}/data/entity`,
+                        url: `${TYME_API_BASE_URL}/data/entity`,
                         qs: {project_ids: [id]},
                     });
                     returnData.push({json: {success: true}, pairedItem: {item: i}});

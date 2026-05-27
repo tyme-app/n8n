@@ -9,8 +9,7 @@ import type {
     IWebhookResponseData,
 } from 'n8n-workflow';
 import {NodeApiError, NodeConnectionTypes} from 'n8n-workflow';
-
-const BASE_URL = 'https://api.tyme-app.com';
+import {TYME_API_TYME_API_BASE_URL} from './constants';
 
 export class TymeTrigger implements INodeType {
     private static assertWebhookResponse(node: INode, statusCode: number, failMessage: string): void {
@@ -100,7 +99,7 @@ export class TymeTrigger implements INodeType {
                 const event = this.getNodeParameter('event') as string;
                 const response = await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
                     method: 'POST',
-                    url: `${BASE_URL}/webhooks/subscribe`,
+                    url: `${TYME_API_BASE_URL}/webhooks/subscribe`,
                     body: {hook_url: webhookUrl, trigger_type: event},
                     returnFullResponse: true,
                 });
@@ -113,7 +112,7 @@ export class TymeTrigger implements INodeType {
                 const event = this.getNodeParameter('event') as string;
                 const response = await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
                     method: 'DELETE',
-                    url: `${BASE_URL}/webhooks/unsubscribe`,
+                    url: `${TYME_API_BASE_URL}/webhooks/unsubscribe`,
                     body: {hook_url: webhookUrl, trigger_type: event},
                     returnFullResponse: true,
                 });
