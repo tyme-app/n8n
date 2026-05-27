@@ -1,6 +1,7 @@
 import type {
     IDataObject,
     IHookFunctions,
+    INode,
     INodeExecutionData,
     INodeType,
     INodeTypeDescription,
@@ -12,6 +13,18 @@ import {NodeApiError, NodeConnectionTypes} from 'n8n-workflow';
 const BASE_URL = 'https://api.tyme-app.com';
 
 export class TymeTrigger implements INodeType {
+    private static assertWebhookResponse(node: INode, statusCode: number, failMessage: string): void {
+        if (statusCode === 401) {
+            throw new NodeApiError(node, {message: 'Authentication failed — check your Tyme credentials'}, {httpCode: '401'});
+        }
+        if (statusCode === 403) {
+            throw new NodeApiError(node, {message: 'Not authorized to manage webhooks on this Tyme account'}, {httpCode: '403'});
+        }
+        if (statusCode !== 200) {
+            throw new NodeApiError(node, {message: failMessage}, {httpCode: String(statusCode)});
+        }
+    }
+
     description: INodeTypeDescription = {
         displayName: 'Tyme Trigger',
         name: 'tymeTrigger',
@@ -91,11 +104,7 @@ export class TymeTrigger implements INodeType {
                     body: {hook_url: webhookUrl, trigger_type: event},
                     returnFullResponse: true,
                 });
-                if (response.statusCode !== 200) {
-                    throw new NodeApiError(this.getNode(), {message: 'Failed to subscribe webhook'}, {
-                        httpCode: String(response.statusCode),
-                    });
-                }
+                TymeTrigger.assertWebhookResponse(this.getNode(), response.statusCode, 'Failed to subscribe webhook');
                 return true;
             },
 
@@ -108,11 +117,8 @@ export class TymeTrigger implements INodeType {
                     body: {hook_url: webhookUrl, trigger_type: event},
                     returnFullResponse: true,
                 });
-                if (response.statusCode !== 200) {
-                    throw new NodeApiError(this.getNode(), {message: 'Failed to unsubscribe webhook'}, {
-                        httpCode: String(response.statusCode),
-                    });
-                }
+                if (response.statusCode === 404) return true;
+                TymeTrigger.assertWebhookResponse(this.getNode(), response.statusCode, 'Failed to unsubscribe webhook');
                 return true;
             },
         },
