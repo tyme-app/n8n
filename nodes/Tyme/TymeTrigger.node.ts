@@ -117,7 +117,6 @@ export class TymeTrigger implements INodeType {
                     body: {hook_url: webhookUrl, trigger_type: event},
                     returnFullResponse: true,
                 });
-                if (response.statusCode === 404) return true;
                 TymeTrigger.assertWebhookResponse(this.getNode(), response.statusCode, 'Failed to unsubscribe webhook');
                 return true;
             },
