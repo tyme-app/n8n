@@ -1,5 +1,8 @@
 import type { ICredentialType, INodeProperties } from 'n8n-workflow';
 
+const TYME_API_BASE_URL = 'https://api.tyme-app.com/';
+const TYME_CLIENT_ID = 'tyme3_n8n';
+
 export class TymeOAuth2Api implements ICredentialType {
 	name = 'tymeOAuth2Api';
 	displayName = 'Tyme OAuth2 API';
@@ -18,19 +21,19 @@ export class TymeOAuth2Api implements ICredentialType {
 			displayName: 'Authorization URL',
 			name: 'authUrl',
 			type: 'hidden',
-			default: 'https://api.tyme-app.com/v1/authorize',
+			default: `${TYME_API_BASE_URL}v1/authorize`,
 		},
 		{
 			displayName: 'Access Token URL',
 			name: 'accessTokenUrl',
 			type: 'hidden',
-			default: 'https://api.tyme-app.com/v1/access_token',
+			default: `${TYME_API_BASE_URL}v1/access_token`,
 		},
 		{
 			displayName: 'Client ID',
 			name: 'clientId',
 			type: 'hidden',
-			default: 'tyme3_n8n',
+			default: TYME_CLIENT_ID,
 		},
 		{
 			displayName: 'Client Secret',
