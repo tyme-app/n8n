@@ -7,7 +7,7 @@ import type {
     IWebhookFunctions,
     IWebhookResponseData,
 } from 'n8n-workflow';
-import {NodeConnectionTypes} from 'n8n-workflow';
+import {NodeApiError, NodeConnectionTypes} from 'n8n-workflow';
 
 const BASE_URL = 'https://api.tyme-app.com';
 
@@ -85,25 +85,33 @@ export class TymeTrigger implements INodeType {
             async create(this: IHookFunctions): Promise<boolean> {
                 const webhookUrl = this.getNodeWebhookUrl('default') as string;
                 const event = this.getNodeParameter('event') as string;
-                await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
+                const response = await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
                     method: 'POST',
                     url: `${BASE_URL}/webhooks/subscribe`,
                     body: {hook_url: webhookUrl, trigger_type: event},
+                    returnFullResponse: true,
                 });
+                if (response.statusCode !== 200) {
+                    throw new NodeApiError(this.getNode(), {message: 'Failed to subscribe webhook'}, {
+                        httpCode: String(response.statusCode),
+                    });
+                }
                 return true;
             },
 
             async delete(this: IHookFunctions): Promise<boolean> {
                 const webhookUrl = this.getNodeWebhookUrl('default') as string;
                 const event = this.getNodeParameter('event') as string;
-                try {
-                    await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
-                        method: 'DELETE',
-                        url: `${BASE_URL}/webhooks/unsubscribe`,
-                        body: {hook_url: webhookUrl, trigger_type: event},
+                const response = await this.helpers.httpRequestWithAuthentication.call(this, 'tymeOAuth2Api', {
+                    method: 'DELETE',
+                    url: `${BASE_URL}/webhooks/unsubscribe`,
+                    body: {hook_url: webhookUrl, trigger_type: event},
+                    returnFullResponse: true,
+                });
+                if (response.statusCode !== 200) {
+                    throw new NodeApiError(this.getNode(), {message: 'Failed to unsubscribe webhook'}, {
+                        httpCode: String(response.statusCode),
                     });
-                } catch {
-                    return false;
                 }
                 return true;
             },
