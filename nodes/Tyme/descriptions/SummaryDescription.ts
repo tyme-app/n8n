@@ -36,4 +36,12 @@ export const summaryFields: INodeProperties[] = [
         default: '',
         displayOptions: {show: {resource: ['summary'], operation: ['get']}},
     },
+    {
+        displayName: 'User ID',
+        name: 'user_id',
+        type: 'string',
+        required: false,
+        default: '',
+        displayOptions: {show: {resource: ['summary'], operation: ['get']}},
+    },
 ];
