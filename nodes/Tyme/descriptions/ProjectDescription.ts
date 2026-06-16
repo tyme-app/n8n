@@ -49,7 +49,7 @@ export const projectFields: INodeProperties[] = [
     },
     {
         displayName: 'Category ID',
-        name: 'parentId',
+        name: 'related_id',
         type: 'string',
         default: '',
         displayOptions: {show: {resource: ['project'], operation: ['search']}},

@@ -49,7 +49,7 @@ export const timedTaskFields: INodeProperties[] = [
     },
     {
         displayName: 'Project ID',
-        name: 'parentId',
+        name: 'related_id',
         type: 'string',
         default: '',
         displayOptions: {show: {resource: ['timedTask'], operation: ['search']}},

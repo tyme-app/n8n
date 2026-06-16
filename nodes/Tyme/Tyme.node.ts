@@ -296,11 +296,11 @@ export class Tyme implements INodeType {
 
                 if (operation === 'search') {
                     const name = this.getNodeParameter('name', i, '') as string;
-                    const parentId = this.getNodeParameter('parentId', i, '') as string;
+                    const related_id = this.getNodeParameter('related_id', i, '') as string;
 
                     const qs: IDataObject = {type: entityType};
                     if (name) qs.name = name;
-                    if (parentId) qs.parent_id = parentId;
+                    if (related_id) qs.parent_id = related_id;
 
                     const response = await this.helpers.httpRequestWithAuthentication.call(
                         this,
