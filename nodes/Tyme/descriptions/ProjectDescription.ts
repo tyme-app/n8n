@@ -169,12 +169,6 @@ export const projectFields: INodeProperties[] = [
         displayOptions: {show: {resource: ['project'], operation: ['update']}},
         options: [
             {
-                displayName: 'Archived',
-                name: 'archived',
-                type: 'boolean',
-                default: false,
-            },
-            {
                 displayName: 'Category ID',
                 name: 'related_id',
                 type: 'string',

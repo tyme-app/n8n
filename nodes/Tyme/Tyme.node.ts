@@ -328,12 +328,6 @@ export class Tyme implements INodeType {
                         body.related_id = this.getNodeParameter('related_id', i) as string;
                     }
 
-                    const archived = additionalFields.archived as boolean | undefined;
-                    if (archived !== undefined) {
-                        delete body.archived;
-                        body.completed_date = archived ? new Date().toISOString().replace('T', ' ').slice(0, 19) : null;
-                    }
-
                     responseData = await this.helpers.httpRequestWithAuthentication.call(
                         this,
                         'tymeOAuth2Api',
@@ -352,12 +346,6 @@ export class Tyme implements INodeType {
                     convertDateFields(updateFields);
 
                     const body: Record<string, unknown> = {type: entityType, id, ...updateFields};
-
-                    const archived = updateFields.archived as boolean | undefined;
-                    if (archived !== undefined) {
-                        delete body.archived;
-                        body.completed_date = archived ? new Date().toISOString().replace('T', ' ').slice(0, 19) : null;
-                    }
 
                     responseData = await this.helpers.httpRequestWithAuthentication.call(
                         this,

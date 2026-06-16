@@ -91,3 +91,8 @@ To connect:
 - [Tyme API Documentation](https://www.tyme-app.com/en/api-doc/)
 - [Tyme n8n Community Node](https://creators.n8n.io/nodes/n8n-nodes-tyme/integration)
 - [Tyme n8n npm Package](https://www.npmjs.com/package/n8n-nodes-tyme)
+
+## Notes
+- Run locally: npm run dev
+- Lint / Fix: npm run lint(:fix)
+- Release: npm run release
