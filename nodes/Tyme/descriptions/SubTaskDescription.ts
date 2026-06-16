@@ -84,6 +84,12 @@ export const subTaskFields: INodeProperties[] = [
         displayOptions: {show: {resource: ['timedSubTask'], operation: ['create']}},
         options: [
             {
+                displayName: 'Completed Date',
+                name: 'completed_date',
+                type: 'dateTime',
+                default: '',
+            },
+            {
                 displayName: 'Due Date',
                 name: 'due_date',
                 type: 'dateTime',
@@ -136,10 +142,10 @@ export const subTaskFields: INodeProperties[] = [
         displayOptions: {show: {resource: ['timedSubTask'], operation: ['update']}},
         options: [
             {
-                displayName: 'Archived',
-                name: 'archived',
-                type: 'boolean',
-                default: false,
+                displayName: 'Completed Date',
+                name: 'completed_date',
+                type: 'dateTime',
+                default: '',
             },
             {
                 displayName: 'Due Date',

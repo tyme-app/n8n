@@ -27,7 +27,7 @@ function toTymeDate(value: unknown): string {
     return new Date(value as string).toISOString().replace('T', ' ').slice(0, 19);
 }
 
-const DATE_FIELDS = ['start_date', 'due_date', 'time_end', 'time_start', 'from', 'to'] as const;
+const DATE_FIELDS = ['start_date', 'due_date', 'completed_date', 'time_end', 'time_start', 'from', 'to'] as const;
 
 function convertDateFields(fields: Record<string, unknown>): void {
     for (const field of DATE_FIELDS) {

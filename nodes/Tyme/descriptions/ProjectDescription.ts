@@ -88,6 +88,12 @@ export const projectFields: INodeProperties[] = [
                 default: 0,
             },
             {
+                displayName: 'Completed Date',
+                name: 'completed_date',
+                type: 'dateTime',
+                default: '',
+            },
+            {
                 displayName: 'Default Hourly Rate',
                 name: 'default_hourly_rate',
                 type: 'number',
@@ -181,10 +187,22 @@ export const projectFields: INodeProperties[] = [
                 default: 0,
             },
             {
+                displayName: 'Completed Date',
+                name: 'completed_date',
+                type: 'dateTime',
+                default: '',
+            },
+            {
                 displayName: 'Default Hourly Rate',
                 name: 'default_hourly_rate',
                 type: 'number',
                 default: 0,
+            },
+            {
+                displayName: 'Start Date',
+                name: 'start_date',
+                type: 'dateTime',
+                default: '',
             },
             {
                 displayName: 'Due Date',
@@ -226,12 +244,6 @@ export const projectFields: INodeProperties[] = [
                 name: 'rounding_minutes',
                 type: 'number',
                 default: 0,
-            },
-            {
-                displayName: 'Start Date',
-                name: 'start_date',
-                type: 'dateTime',
-                default: '',
             },
         ],
     },
