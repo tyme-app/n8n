@@ -168,6 +168,10 @@ export class Tyme implements INodeType {
                 if (resource === 'summary') {
                     const from = toTymeDate(this.getNodeParameter('from', i));
                     const to = toTymeDate(this.getNodeParameter('to', i));
+                    const user_id = this.getNodeParameter('user_id', i, '') as string;
+
+                    const qs: IDataObject = {from, to};
+                    if (user_id) qs.user_id = user_id;
 
                     const response = await this.helpers.httpRequestWithAuthentication.call(
                         this,
@@ -175,7 +179,7 @@ export class Tyme implements INodeType {
                         {
                             method: 'GET',
                             url: `${TYME_API_BASE_URL}/data/summary`,
-                            qs: {from, to},
+                            qs,
                         },
                     );
                     const items2 = Array.isArray(response) ? response : [response];
