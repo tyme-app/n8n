@@ -64,12 +64,12 @@ export class TymeTrigger implements INodeType {
                     {
                         name: 'Sub-Task Created',
                         value: 'subtask',
-                        description: 'Triggers when a new sub-task is created',
+                        description: 'Triggers when any new sub-task is created',
                     },
                     {
                         name: 'Task Created',
                         value: 'task',
-                        description: 'Triggers when a new task is created',
+                        description: 'Triggers when any new task is created',
                     },
                     {
                         name: 'Time Entry Created',

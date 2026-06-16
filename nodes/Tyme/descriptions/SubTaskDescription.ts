@@ -6,31 +6,31 @@ export const subTaskOperations: INodeProperties[] = [
         name: 'operation',
         type: 'options',
         noDataExpression: true,
-        displayOptions: {show: {resource: ['subTask']}},
+        displayOptions: {show: {resource: ['timedSubTask']}},
         options: [
             {
                 name: 'Create',
                 value: 'create',
-                description: 'Create a sub-task',
-                action: 'Create a sub task',
+                description: 'Create a timed sub-task',
+                action: 'Create a timed sub task',
             },
             {
                 name: 'Delete',
                 value: 'delete',
-                description: 'Delete a sub-task',
-                action: 'Delete a sub task',
+                description: 'Delete a timed sub-task',
+                action: 'Delete a timed sub task',
             },
             {
                 name: 'Search',
                 value: 'search',
-                description: 'Search sub-tasks',
-                action: 'Search sub tasks',
+                description: 'Search timed sub-tasks',
+                action: 'Search timed sub tasks',
             },
             {
                 name: 'Update',
                 value: 'update',
-                description: 'Update a sub-task',
-                action: 'Update a sub task',
+                description: 'Update a timed sub-task',
+                action: 'Update a timed sub task',
             },
         ],
         default: 'search',
@@ -44,16 +44,16 @@ export const subTaskFields: INodeProperties[] = [
         name: 'name',
         type: 'string',
         default: '',
-        displayOptions: {show: {resource: ['subTask'], operation: ['search']}},
-        description: 'Filter sub-tasks by name',
+        displayOptions: {show: {resource: ['timedSubTask'], operation: ['search']}},
+        description: 'Filter timed sub-tasks by name',
     },
     {
-        displayName: 'Task ID',
+        displayName: 'Timed Task ID',
         name: 'parentId',
         type: 'string',
         default: '',
-        displayOptions: {show: {resource: ['subTask'], operation: ['search']}},
-        description: 'Filter by parent task ID',
+        displayOptions: {show: {resource: ['timedSubTask'], operation: ['search']}},
+        description: 'Filter by parent timed task ID',
     },
 
     // ── Create ──────────────────────────────────────────────────────────────
@@ -63,17 +63,17 @@ export const subTaskFields: INodeProperties[] = [
         type: 'string',
         required: true,
         default: '',
-        displayOptions: {show: {resource: ['subTask'], operation: ['create']}},
-        description: 'Name of the sub-task',
+        displayOptions: {show: {resource: ['timedSubTask'], operation: ['create']}},
+        description: 'Name of the timed sub-task',
     },
     {
-        displayName: 'Task ID',
+        displayName: 'Timed Task ID',
         name: 'related_id',
         type: 'string',
         required: true,
         default: '',
-        displayOptions: {show: {resource: ['subTask'], operation: ['create']}},
-        description: 'ID of the parent task',
+        displayOptions: {show: {resource: ['timedSubTask'], operation: ['create']}},
+        description: 'ID of the parent timed task',
     },
     {
         displayName: 'Additional Fields',
@@ -81,7 +81,7 @@ export const subTaskFields: INodeProperties[] = [
         type: 'collection',
         placeholder: 'Add Field',
         default: {},
-        displayOptions: {show: {resource: ['subTask'], operation: ['create']}},
+        displayOptions: {show: {resource: ['timedSubTask'], operation: ['create']}},
         options: [
             {
                 displayName: 'Due Date',
@@ -100,7 +100,7 @@ export const subTaskFields: INodeProperties[] = [
                 name: 'id',
                 type: 'string',
                 default: '',
-                description: 'Custom ID for the sub-task. Auto-generated if omitted. Cannot be changed after creation.',
+                description: 'Custom ID for the timed sub-task. Auto-generated if omitted. Cannot be changed after creation.',
             },
             {
                 displayName: 'Planned Duration (Seconds)',
@@ -119,13 +119,13 @@ export const subTaskFields: INodeProperties[] = [
 
     // ── Update ──────────────────────────────────────────────────────────────
     {
-        displayName: 'Sub-Task ID',
+        displayName: 'Timed Sub-Task ID',
         name: 'id',
         type: 'string',
         required: true,
         default: '',
-        displayOptions: {show: {resource: ['subTask'], operation: ['update']}},
-        description: 'ID of the sub-task to update',
+        displayOptions: {show: {resource: ['timedSubTask'], operation: ['update']}},
+        description: 'ID of the timed sub-task to update',
     },
     {
         displayName: 'Update Fields',
@@ -133,7 +133,7 @@ export const subTaskFields: INodeProperties[] = [
         type: 'collection',
         placeholder: 'Add Field',
         default: {},
-        displayOptions: {show: {resource: ['subTask'], operation: ['update']}},
+        displayOptions: {show: {resource: ['timedSubTask'], operation: ['update']}},
         options: [
             {
                 displayName: 'Archived',
@@ -172,7 +172,7 @@ export const subTaskFields: INodeProperties[] = [
                 default: '',
             },
             {
-                displayName: 'Task ID',
+                displayName: 'Timed Task ID',
                 name: 'related_id',
                 type: 'string',
                 default: '',
@@ -182,12 +182,12 @@ export const subTaskFields: INodeProperties[] = [
 
     // ── Delete ──────────────────────────────────────────────────────────────
     {
-        displayName: 'Sub-Task ID',
+        displayName: 'Timed Sub-Task ID',
         name: 'id',
         type: 'string',
         required: true,
         default: '',
-        displayOptions: {show: {resource: ['subTask'], operation: ['delete']}},
-        description: 'ID of the sub-task to delete',
+        displayOptions: {show: {resource: ['timedSubTask'], operation: ['delete']}},
+        description: 'ID of the timed sub-task to delete',
     },
 ];

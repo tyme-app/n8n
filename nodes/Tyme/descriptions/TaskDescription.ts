@@ -6,31 +6,31 @@ export const taskOperations: INodeProperties[] = [
         name: 'operation',
         type: 'options',
         noDataExpression: true,
-        displayOptions: {show: {resource: ['task']}},
+        displayOptions: {show: {resource: ['timedTask']}},
         options: [
             {
                 name: 'Create',
                 value: 'create',
-                description: 'Create a task',
-                action: 'Create a task',
+                description: 'Create a timed task',
+                action: 'Create a timed task',
             },
             {
                 name: 'Delete',
                 value: 'delete',
-                description: 'Delete a task',
-                action: 'Delete a task',
+                description: 'Delete a timed task',
+                action: 'Delete a timed task',
             },
             {
                 name: 'Search',
                 value: 'search',
-                description: 'Search tasks',
-                action: 'Search tasks',
+                description: 'Search timed tasks',
+                action: 'Search timed tasks',
             },
             {
                 name: 'Update',
                 value: 'update',
-                description: 'Update a task',
-                action: 'Update a task',
+                description: 'Update a timed task',
+                action: 'Update a timed task',
             },
         ],
         default: 'search',
@@ -44,15 +44,15 @@ export const taskFields: INodeProperties[] = [
         name: 'name',
         type: 'string',
         default: '',
-        displayOptions: {show: {resource: ['task'], operation: ['search']}},
-        description: 'Filter tasks by name',
+        displayOptions: {show: {resource: ['timedTask'], operation: ['search']}},
+        description: 'Filter timed tasks by name',
     },
     {
         displayName: 'Project ID',
         name: 'parentId',
         type: 'string',
         default: '',
-        displayOptions: {show: {resource: ['task'], operation: ['search']}},
+        displayOptions: {show: {resource: ['timedTask'], operation: ['search']}},
         description: 'Filter by parent project ID',
     },
 
@@ -63,8 +63,8 @@ export const taskFields: INodeProperties[] = [
         type: 'string',
         required: true,
         default: '',
-        displayOptions: {show: {resource: ['task'], operation: ['create']}},
-        description: 'Name of the task',
+        displayOptions: {show: {resource: ['timedTask'], operation: ['create']}},
+        description: 'Name of the timed task',
     },
     {
         displayName: 'Project ID',
@@ -72,7 +72,7 @@ export const taskFields: INodeProperties[] = [
         type: 'string',
         required: true,
         default: '',
-        displayOptions: {show: {resource: ['task'], operation: ['create']}},
+        displayOptions: {show: {resource: ['timedTask'], operation: ['create']}},
         description: 'ID of the parent project',
     },
     {
@@ -81,7 +81,7 @@ export const taskFields: INodeProperties[] = [
         type: 'collection',
         placeholder: 'Add Field',
         default: {},
-        displayOptions: {show: {resource: ['task'], operation: ['create']}},
+        displayOptions: {show: {resource: ['timedTask'], operation: ['create']}},
         options: [
             {
                 displayName: 'Billable',
@@ -106,7 +106,7 @@ export const taskFields: INodeProperties[] = [
                 name: 'id',
                 type: 'string',
                 default: '',
-                description: 'Custom ID for the task. Auto-generated if omitted. Cannot be changed after creation.',
+                description: 'Custom ID for the timed task. Auto-generated if omitted. Cannot be changed after creation.',
             },
             {
                 displayName: 'Planned Duration (Seconds)',
@@ -125,13 +125,13 @@ export const taskFields: INodeProperties[] = [
 
     // ── Update ──────────────────────────────────────────────────────────────
     {
-        displayName: 'Task ID',
+        displayName: 'Timed Task ID',
         name: 'id',
         type: 'string',
         required: true,
         default: '',
-        displayOptions: {show: {resource: ['task'], operation: ['update']}},
-        description: 'ID of the task to update',
+        displayOptions: {show: {resource: ['timedTask'], operation: ['update']}},
+        description: 'ID of the timed task to update',
     },
     {
         displayName: 'Update Fields',
@@ -139,7 +139,7 @@ export const taskFields: INodeProperties[] = [
         type: 'collection',
         placeholder: 'Add Field',
         default: {},
-        displayOptions: {show: {resource: ['task'], operation: ['update']}},
+        displayOptions: {show: {resource: ['timedTask'], operation: ['update']}},
         options: [
             {
                 displayName: 'Archived',
@@ -194,12 +194,12 @@ export const taskFields: INodeProperties[] = [
 
     // ── Delete ──────────────────────────────────────────────────────────────
     {
-        displayName: 'Task ID',
+        displayName: 'Timed Task ID',
         name: 'id',
         type: 'string',
         required: true,
         default: '',
-        displayOptions: {show: {resource: ['task'], operation: ['delete']}},
-        description: 'ID of the task to delete',
+        displayOptions: {show: {resource: ['timedTask'], operation: ['delete']}},
+        description: 'ID of the timed task to delete',
     },
 ];

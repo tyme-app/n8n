@@ -40,8 +40,8 @@ function convertDateFields(fields: Record<string, unknown>): void {
 const ENTITY_TYPE_MAP: Record<string, string> = {
     projectCategory: 'ProjectCategory',
     project: 'Project',
-    task: 'TimedTask',
-    subTask: 'TimedSubTask',
+    timedTask: 'TimedTask',
+    timedSubTask: 'TimedSubTask',
     timeEntry: 'TimedTaskRecord',
 };
 
@@ -69,9 +69,9 @@ export class Tyme implements INodeType {
                     {name: 'Absence', value: 'absence'},
                     {name: 'Project', value: 'project'},
                     {name: 'Project Category', value: 'projectCategory'},
-                    {name: 'Sub-Task', value: 'subTask'},
                     {name: 'Summary', value: 'summary'},
-                    {name: 'Task', value: 'task'},
+                    {name: 'Timed Sub-Task', value: 'timedSubTask'},
+                    {name: 'Timed Task', value: 'timedTask'},
                     {name: 'Team Member', value: 'teamMember'},
                     {name: 'Time', value: 'times'},
                     {name: 'Time Entry', value: 'timeEntry'},
@@ -286,7 +286,7 @@ export class Tyme implements INodeType {
                     }
                 }
 
-                // ── Entities: ProjectCategory, Project, Task, SubTask ──────────────
+                // ── Entities: ProjectCategory, Project, TimedTask, TimedSubTask ──────────────
                 const entityType = ENTITY_TYPE_MAP[resource];
                 if (!entityType) {
                     throw new NodeOperationError(this.getNode(), `Unknown resource: ${resource}`, {
@@ -324,7 +324,7 @@ export class Tyme implements INodeType {
 
                     const body: Record<string, unknown> = {type: entityType, name, ...additionalFields};
 
-                    if (resource === 'task' || resource === 'subTask') {
+                    if (resource === 'timedTask' || resource === 'timedSubTask') {
                         body.related_id = this.getNodeParameter('related_id', i) as string;
                     }
 
