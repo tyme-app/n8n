@@ -139,7 +139,8 @@ export const projectFields: INodeProperties[] = [
                 displayName: 'Rounding Minutes',
                 name: 'rounding_minutes',
                 type: 'number',
-                default: 0,
+                default: 1,
+                typeOptions: {minValue: 1},
             },
             {
                 displayName: 'Start Date',
@@ -231,7 +232,8 @@ export const projectFields: INodeProperties[] = [
                 displayName: 'Rounding Minutes',
                 name: 'rounding_minutes',
                 type: 'number',
-                default: 0,
+                default: 1,
+                typeOptions: {minValue: 1},
             },
             {
                 displayName: 'Start Date',
