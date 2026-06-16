@@ -121,6 +121,24 @@ export const timedTaskFields: INodeProperties[] = [
                 default: 0,
             },
             {
+                displayName: 'Rounding Method',
+                name: 'rounding_method',
+                type: 'options',
+                options: [
+                    {name: 'Down', value: 'DOWN'},
+                    {name: 'Nearest', value: 'NEAREST'},
+                    {name: 'Up', value: 'UP'},
+                ],
+                default: 'NEAREST',
+            },
+            {
+                displayName: 'Rounding Minutes',
+                name: 'rounding_minutes',
+                type: 'number',
+                default: 1,
+                typeOptions: {minValue: 1},
+            },
+            {
                 displayName: 'Start Date',
                 name: 'start_date',
                 type: 'dateTime',
@@ -188,6 +206,24 @@ export const timedTaskFields: INodeProperties[] = [
                 name: 'related_id',
                 type: 'string',
                 default: '',
+            },
+            {
+                displayName: 'Rounding Method',
+                name: 'rounding_method',
+                type: 'options',
+                options: [
+                    {name: 'Down', value: 'DOWN'},
+                    {name: 'Nearest', value: 'NEAREST'},
+                    {name: 'Up', value: 'UP'},
+                ],
+                default: 'NEAREST',
+            },
+            {
+                displayName: 'Rounding Minutes',
+                name: 'rounding_minutes',
+                type: 'number',
+                default: 1,
+                typeOptions: {minValue: 1},
             },
             {
                 displayName: 'Start Date',
