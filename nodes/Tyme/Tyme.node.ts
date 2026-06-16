@@ -13,7 +13,7 @@ import {
     projectCategoryOperations,
 } from './descriptions/ProjectCategoryDescription';
 import {projectFields, projectOperations} from './descriptions/ProjectDescription';
-import {subTaskFields, subTaskOperations} from './descriptions/SubTaskDescription';
+import {timedSubTaskFields, timedSubTaskOperations} from './descriptions/TimedSubTaskDescription';
 import {summaryFields, summaryOperations} from './descriptions/SummaryDescription';
 import {timedTaskFields, timedTaskOperations} from './descriptions/TimedTaskDescription';
 import {teamMemberFields, teamMemberOperations} from './descriptions/TeamMemberDescription';
@@ -86,8 +86,8 @@ export class Tyme implements INodeType {
             ...projectFields,
             ...timedTaskOperations,
             ...timedTaskFields,
-            ...subTaskOperations,
-            ...subTaskFields,
+            ...timedSubTaskOperations,
+            ...timedSubTaskFields,
             ...timeEntryOperations,
             ...timeEntryFields,
             ...timesOperations,

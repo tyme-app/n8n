@@ -1,6 +1,6 @@
 import type {INodeProperties} from 'n8n-workflow';
 
-export const subTaskOperations: INodeProperties[] = [
+export const timedSubTaskOperations: INodeProperties[] = [
     {
         displayName: 'Operation',
         name: 'operation',
@@ -37,7 +37,7 @@ export const subTaskOperations: INodeProperties[] = [
     },
 ];
 
-export const subTaskFields: INodeProperties[] = [
+export const timedSubTaskFields: INodeProperties[] = [
     // ── Search ──────────────────────────────────────────────────────────────
     {
         displayName: 'Name',
