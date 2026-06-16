@@ -148,26 +148,14 @@ export const taskFields: INodeProperties[] = [
         displayOptions: {show: {resource: ['timedTask'], operation: ['update']}},
         options: [
             {
-                displayName: 'Name',
-                name: 'name',
-                type: 'string',
-                default: '',
-            },
-            {
-                displayName: 'Completed Date',
-                name: 'completed_date',
-                type: 'dateTime',
-                default: '',
-            },
-            {
                 displayName: 'Billable',
                 name: 'billable',
                 type: 'boolean',
                 default: true,
             },
             {
-                displayName: 'Start Date',
-                name: 'start_date',
+                displayName: 'Completed Date',
+                name: 'completed_date',
                 type: 'dateTime',
                 default: '',
             },
@@ -184,6 +172,12 @@ export const taskFields: INodeProperties[] = [
                 default: 0,
             },
             {
+                displayName: 'Name',
+                name: 'name',
+                type: 'string',
+                default: '',
+            },
+            {
                 displayName: 'Planned Duration (Seconds)',
                 name: 'planned_duration',
                 type: 'number',
@@ -194,7 +188,13 @@ export const taskFields: INodeProperties[] = [
                 name: 'related_id',
                 type: 'string',
                 default: '',
-            }
+            },
+            {
+                displayName: 'Start Date',
+                name: 'start_date',
+                type: 'dateTime',
+                default: '',
+            },
         ],
     },
 

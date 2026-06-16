@@ -90,12 +90,6 @@ export const subTaskFields: INodeProperties[] = [
                 default: '',
             },
             {
-                displayName: 'Start Date',
-                name: 'start_date',
-                type: 'dateTime',
-                default: '',
-            },
-            {
                 displayName: 'Due Date',
                 name: 'due_date',
                 type: 'dateTime',
@@ -119,6 +113,12 @@ export const subTaskFields: INodeProperties[] = [
                 name: 'planned_duration',
                 type: 'number',
                 default: 0,
+            },
+            {
+                displayName: 'Start Date',
+                name: 'start_date',
+                type: 'dateTime',
+                default: '',
             },
         ],
     },
@@ -148,12 +148,6 @@ export const subTaskFields: INodeProperties[] = [
                 default: '',
             },
             {
-                displayName: 'Start Date',
-                name: 'start_date',
-                type: 'dateTime',
-                default: '',
-            },
-            {
                 displayName: 'Due Date',
                 name: 'due_date',
                 type: 'dateTime',
@@ -176,6 +170,12 @@ export const subTaskFields: INodeProperties[] = [
                 name: 'planned_duration',
                 type: 'number',
                 default: 0,
+            },
+            {
+                displayName: 'Start Date',
+                name: 'start_date',
+                type: 'dateTime',
+                default: '',
             },
             {
                 displayName: 'Timed Task ID',

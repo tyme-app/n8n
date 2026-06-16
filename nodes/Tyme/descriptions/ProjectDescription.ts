@@ -193,12 +193,6 @@ export const projectFields: INodeProperties[] = [
                 default: 0,
             },
             {
-                displayName: 'Start Date',
-                name: 'start_date',
-                type: 'dateTime',
-                default: '',
-            },
-            {
                 displayName: 'Due Date',
                 name: 'due_date',
                 type: 'dateTime',
@@ -238,6 +232,12 @@ export const projectFields: INodeProperties[] = [
                 name: 'rounding_minutes',
                 type: 'number',
                 default: 0,
+            },
+            {
+                displayName: 'Start Date',
+                name: 'start_date',
+                type: 'dateTime',
+                default: '',
             },
         ],
     },
